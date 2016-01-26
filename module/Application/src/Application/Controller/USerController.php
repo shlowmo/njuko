@@ -61,7 +61,17 @@ class UserController extends AbstractActionController
     public function removeAction()
     {
         //To do : Do Remove User
-
+        $userTodelete = $this->getServiceLocator()->get('entity_manager')
+            ->getRepository('Application\Entity\User')
+            ->find($this->params()->fromRoute('user_id'));
+        
+        if(!$userTodelete){
+            //Add some error message
+            $this->redirect()->toRoute('users');
+        }
+        $serviceUser = $this->getServiceLocator()->get('application.service.user');
+        $serviceUser->removeUser($userTodelete);
+        
         $this->redirect()->toRoute('users');
     }
 
