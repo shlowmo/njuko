@@ -29,6 +29,14 @@ echo $this->form()->openTag($form);
     </div>
 
     <div class="control-group">
+        <?php echo  $this->formLabel($form->get('birthdate')); ?>
+        <div class="controls">
+            <?php echo  $this->formElement($form->get('birthdate')); ?>
+            <span class="help-block errors"><?php echo  $this->formElementErrors($form->get('birthdate')); ?></span>
+        </div>
+    </div>
+
+    <div class="control-group">
         <?php echo  $this->formLabel($form->get('email')); ?>
         <div class="controls">
             <?php echo  $this->formElement($form->get('email')); ?>

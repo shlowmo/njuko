@@ -57,6 +57,15 @@ class Profile extends EntityAbstract
      * @var string
      */
     protected $address;
+    
+    /**
+     * birthdate
+     *
+     * @ORM\Column(type="string", length=256, nullable=true)
+     *
+     * @var date
+     */
+    protected $birthdate;
 
     /**
      * @var datetime $created
@@ -155,6 +164,29 @@ class Profile extends EntityAbstract
     public function getAddress()
     {
         return $this->address;
+    }
+    
+    /**
+     * Set birthdate
+     *
+     * @param string $birthdate
+     * @return Profile
+     */
+    public function setBirthdate($birthdate)
+    {
+        $this->birthdate = $birthdate;
+
+        return $this;
+    }
+
+    /**
+     * Get birthdate
+     *
+     * @return string
+     */
+    public function getBirthdate()
+    {
+        return $this->birthdate;
     }
 
     /**

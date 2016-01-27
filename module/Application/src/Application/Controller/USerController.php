@@ -87,6 +87,8 @@ class UserController extends AbstractActionController
         $form->bind($userToEdit);
         $form->get('firstname')->setValue($userToEdit->getFirstname());
         $form->get('lastname')->setValue($userToEdit->getLastname());
+        $form->get('address')->setValue($userToEdit->getAddress());
+        $form->get('birthdate')->setValue($userToEdit->getBirthdate());
 
         $data = $this->prg();
 
