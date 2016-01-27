@@ -86,6 +86,7 @@ class UserController extends AbstractActionController
 
         $form->bind($userToEdit);
         $form->get('firstname')->setValue($userToEdit->getFirstname());
+        $form->get('lastname')->setValue($userToEdit->getLastname());
 
         $data = $this->prg();
 
@@ -101,7 +102,8 @@ class UserController extends AbstractActionController
                 $user = $form->getData();
 
                 //Save the user
-
+                $serviceUser = $this->getServiceLocator()->get('application.service.user');
+                $serviceUser->saveUser($user);
                 $this->redirect()->toRoute('users');
             }
         }
