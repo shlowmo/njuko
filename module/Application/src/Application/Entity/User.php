@@ -175,6 +175,16 @@ class User extends EntityAbstract
 
         $this->getProfile()->setLastName($lastname);
     }
+    
+    public function setAddress($address)
+    {
+        if(!is_object($this->getProfile()))
+        {
+            $this->setProfile(new Profile());
+        }
+
+        $this->getProfile()->setaddress($address);
+    }
 
     public function getFirstName()
     {
@@ -184,6 +194,11 @@ class User extends EntityAbstract
     public function getLastName()
     {
         return $this->getProfile()->getLastName();
+    }
+    
+    public function getAddress()
+    {
+        return $this->getProfile()->getAddress();
     }
 
 }
