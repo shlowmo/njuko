@@ -16,13 +16,25 @@ class UserController extends AbstractActionController
 {
     public function listAction()
     {
-
-        $users = $this->getServiceLocator()->get('entity_manager')
+        //Get sort options
+        $field = $this->params()->fromRoute('field');
+        $type = $this->params()->fromRoute('type');
+        
+        if($field&&$type) {
+            $users = $this->getServiceLocator()->get('entity_manager')
             ->getRepository('Application\Entity\User')
-            ->findAll();
-
+            ->findBy(array(), array($field => $type));
+        }
+        else {
+            $users = $this->getServiceLocator()->get('entity_manager')
+                ->getRepository('Application\Entity\User')
+                ->findAll();
+        }
+        
         return new ViewModel(array(
-            'users' =>  $users
+            'users' =>  $users,
+            'field' => $field,
+            'type' => $type
         ));
     }
 

@@ -90,6 +90,15 @@ return array(
                             ),
                         ),
                     ),
+                    'order' => array(
+                        'type' => 'Segment',
+                        'options' => array(
+                            'route' => '/order/:field/:type',
+                            'defaults' => array(
+                                'action' => 'list'
+                            ),
+                        ),
+                    ),
                 ),
             )
         ),

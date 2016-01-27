@@ -1,3 +1,10 @@
+<?php
+    $url_order = 'asc';
+    if ($field == 'id')
+        $url_order = $type == 'asc' ? 'desc' : 'asc';
+    elseif ($field == 'firstname')
+        $url_order = $field == 'asc' ? 'desc' : 'asc';
+?>
 <a href="<?php echo $this->url('users/add')?>" class='btn btn-primary'>
     <?php echo $this->translate('__add_user')?>
 </a>
@@ -9,7 +16,8 @@
     <thead>
         <tr>
             <th>
-                <?php echo $this->translate('__user_id')?>
+                <a href="/users/order/id/<?php echo $url_order?>"><?php echo $this->translate('__user_id')?> <?php if ($field == 'id'): ?><i class="icon-chevron-<?php echo $url_order == 'asc' ? 'down' : 'up' ?>"></i><?php endif; ?></a>
+                <?php // echo $this->translate('__user_id')?>
             </th>
             <th>
                 <?php echo $this->translate('__user_firstname')?>
@@ -24,6 +32,7 @@
                 <?php echo $this->translate('__user_birthdate')?>
             </th>
             <th>
+                <a href="/users/order/email/<?php echo $url_order?>"><?php echo $this->translate('__user_email')?> <?php if ($field == 'email'): ?><i class="icon-chevron-<?php echo $url_order == 'asc' ? 'down' : 'up' ?>"></i><?php endif; ?></a>
                 <?php echo $this->translate('__user_email')?>
             </th>
             <th></th>
