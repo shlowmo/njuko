@@ -61,7 +61,7 @@ class Profile extends EntityAbstract
     /**
      * birthdate
      *
-     * @ORM\Column(type="string", length=256, nullable=true)
+     * @ORM\Column(type="date",nullable=true)
      *
      * @var date
      */
@@ -174,7 +174,7 @@ class Profile extends EntityAbstract
      */
     public function setBirthdate($birthdate)
     {
-        $this->birthdate = $birthdate;
+        $this->birthdate = new \DateTime($birthdate);
 
         return $this;
     }

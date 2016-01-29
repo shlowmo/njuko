@@ -57,7 +57,9 @@
             <?php echo $user['profile']['address']?>
         </td>
         <td>
-            <?php echo $user['profile']['birthdate']?>
+            <?php if($user['profile']['birthdate']): ?>
+                <?php echo date_format($user['profile']['birthdate'], 'd/m/Y');?>
+            <?php endif; ?>
         </td>
         <td>
             <a href='mailto:<?php echo $user['email']?>'>
