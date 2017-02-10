@@ -64,10 +64,10 @@ class Profile extends \Application\Entity\Profile implements \Doctrine\ORM\Proxy
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return array('__isInitialized__', 'id', 'user', 'lastName', 'firstName', 'address', 'birthdate', '' . "\0" . 'Application\\Entity\\Profile' . "\0" . 'created', '' . "\0" . 'Application\\Entity\\Profile' . "\0" . 'updated');
+            return array('__isInitialized__', 'id', 'user', 'lastName', 'firstName', 'address', '' . "\0" . 'Application\\Entity\\Profile' . "\0" . 'created', '' . "\0" . 'Application\\Entity\\Profile' . "\0" . 'updated');
         }
 
-        return array('__isInitialized__', 'id', 'user', 'lastName', 'firstName', 'address', 'birthdate', '' . "\0" . 'Application\\Entity\\Profile' . "\0" . 'created', '' . "\0" . 'Application\\Entity\\Profile' . "\0" . 'updated');
+        return array('__isInitialized__', 'id', 'user', 'lastName', 'firstName', 'address', '' . "\0" . 'Application\\Entity\\Profile' . "\0" . 'created', '' . "\0" . 'Application\\Entity\\Profile' . "\0" . 'updated');
     }
 
     /**
@@ -252,28 +252,6 @@ class Profile extends \Application\Entity\Profile implements \Doctrine\ORM\Proxy
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getAddress', array());
 
         return parent::getAddress();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function setBirthdate($birthdate)
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setBirthdate', array($birthdate));
-
-        return parent::setBirthdate($birthdate);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getBirthdate()
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getBirthdate', array());
-
-        return parent::getBirthdate();
     }
 
     /**

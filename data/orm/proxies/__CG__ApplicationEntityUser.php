@@ -334,67 +334,12 @@ class User extends \Application\Entity\User implements \Doctrine\ORM\Proxy\Proxy
     /**
      * {@inheritDoc}
      */
-    public function setAddress($address)
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setAddress', array($address));
-
-        return parent::setAddress($address);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function setBirthdate($birthdate)
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setBirthdate', array($birthdate));
-
-        return parent::setBirthdate($birthdate);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
     public function getFirstName()
     {
 
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getFirstName', array());
 
         return parent::getFirstName();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getLastName()
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getLastName', array());
-
-        return parent::getLastName();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getAddress()
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getAddress', array());
-
-        return parent::getAddress();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getBirthdate()
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getBirthdate', array());
-
-        return parent::getBirthdate();
     }
 
     /**
